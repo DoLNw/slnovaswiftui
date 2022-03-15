@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49040FC627DF966F00007CCB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 49040FC527DF966F00007CCB /* SwiftUICharts */; };
 		4956F3B627DA11CA0057DFC8 /* slnovaswiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956F3B527DA11CA0057DFC8 /* slnovaswiftuiApp.swift */; };
 		4956F3B827DA11CA0057DFC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956F3B727DA11CA0057DFC8 /* ContentView.swift */; };
 		4956F3BA27DA11CE0057DFC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4956F3B927DA11CE0057DFC8 /* Assets.xcassets */; };
 		4956F3BD27DA11CE0057DFC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4956F3BC27DA11CE0057DFC8 /* Preview Assets.xcassets */; };
+		4956F3CF27DA20420057DFC8 /* HostStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956F3CE27DA20420057DFC8 /* HostStateView.swift */; };
+		4956F3D327DA24CF0057DFC8 /* HostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956F3D227DA24CF0057DFC8 /* HostState.swift */; };
+		4956F3D527DADE220057DFC8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956F3D427DADE200057DFC8 /* ModelData.swift */; };
+		4956F3D727DAE2350057DFC8 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4956F3D627DAE2350057DFC8 /* Podfile */; };
+		4956F3D927DAE87E0057DFC8 /* DataChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956F3D827DAE87E0057DFC8 /* DataChangePublisher.swift */; };
+		49B99DBF27DF61D500C94B21 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B99DBE27DF61D500C94B21 /* Helper.swift */; };
+		70AC29CFAC7AB8AE2B8C291B /* Pods_slnovaswiftui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE58A506974817C751473EB4 /* Pods_slnovaswiftui.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,16 @@
 		4956F3B727DA11CA0057DFC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4956F3B927DA11CE0057DFC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4956F3BC27DA11CE0057DFC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4956F3CE27DA20420057DFC8 /* HostStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostStateView.swift; sourceTree = "<group>"; };
+		4956F3D227DA24CF0057DFC8 /* HostState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostState.swift; sourceTree = "<group>"; };
+		4956F3D427DADE200057DFC8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		4956F3D627DAE2350057DFC8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4956F3D827DAE87E0057DFC8 /* DataChangePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChangePublisher.swift; sourceTree = "<group>"; };
+		497FDFDA27DB63260092CD2B /* slnovaswiftui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = slnovaswiftui.entitlements; sourceTree = "<group>"; };
+		49B99DBE27DF61D500C94B21 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BB13BBF55A24F40F8230FE05 /* Pods-slnovaswiftui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slnovaswiftui.release.xcconfig"; path = "Target Support Files/Pods-slnovaswiftui/Pods-slnovaswiftui.release.xcconfig"; sourceTree = "<group>"; };
+		CB74CF64D272D85E81E0A726 /* Pods-slnovaswiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slnovaswiftui.debug.xcconfig"; path = "Target Support Files/Pods-slnovaswiftui/Pods-slnovaswiftui.debug.xcconfig"; sourceTree = "<group>"; };
+		FE58A506974817C751473EB4 /* Pods_slnovaswiftui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slnovaswiftui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +44,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AC29CFAC7AB8AE2B8C291B /* Pods_slnovaswiftui.framework in Frameworks */,
+				49040FC627DF966F00007CCB /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FE21593B3483AD73A0F9436 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB74CF64D272D85E81E0A726 /* Pods-slnovaswiftui.debug.xcconfig */,
+				BB13BBF55A24F40F8230FE05 /* Pods-slnovaswiftui.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4956F3A927DA11CA0057DFC8 = {
 			isa = PBXGroup;
 			children = (
+				4956F3D627DAE2350057DFC8 /* Podfile */,
 				4956F3B427DA11CA0057DFC8 /* slnovaswiftui */,
 				4956F3B327DA11CA0057DFC8 /* Products */,
+				1FE21593B3483AD73A0F9436 /* Pods */,
+				BEED58CEE80B83ECAE16FE3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +83,14 @@
 		4956F3B427DA11CA0057DFC8 /* slnovaswiftui */ = {
 			isa = PBXGroup;
 			children = (
+				497FDFDA27DB63260092CD2B /* slnovaswiftui.entitlements */,
+				4956F3CE27DA20420057DFC8 /* HostStateView.swift */,
+				4956F3D227DA24CF0057DFC8 /* HostState.swift */,
 				4956F3B527DA11CA0057DFC8 /* slnovaswiftuiApp.swift */,
 				4956F3B727DA11CA0057DFC8 /* ContentView.swift */,
+				4956F3D827DAE87E0057DFC8 /* DataChangePublisher.swift */,
+				49B99DBE27DF61D500C94B21 /* Helper.swift */,
+				4956F3D427DADE200057DFC8 /* ModelData.swift */,
 				4956F3B927DA11CE0057DFC8 /* Assets.xcassets */,
 				4956F3BB27DA11CE0057DFC8 /* Preview Content */,
 			);
@@ -67,6 +105,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BEED58CEE80B83ECAE16FE3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE58A506974817C751473EB4 /* Pods_slnovaswiftui.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +120,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4956F3C027DA11CE0057DFC8 /* Build configuration list for PBXNativeTarget "slnovaswiftui" */;
 			buildPhases = (
+				768E766B751B1570FDD2DB52 /* [CP] Check Pods Manifest.lock */,
 				4956F3AE27DA11CA0057DFC8 /* Sources */,
 				4956F3AF27DA11CA0057DFC8 /* Frameworks */,
 				4956F3B027DA11CA0057DFC8 /* Resources */,
+				E66AE61E371ED3C122A5CEA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = slnovaswiftui;
+			packageProductDependencies = (
+				49040FC527DF966F00007CCB /* SwiftUICharts */,
+			);
 			productName = slnovaswiftui;
 			productReference = 4956F3B227DA11CA0057DFC8 /* slnovaswiftui.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 4956F3A927DA11CA0057DFC8;
+			packageReferences = (
+				49040FC427DF966F00007CCB /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 4956F3B327DA11CA0057DFC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4956F3D727DAE2350057DFC8 /* Podfile in Resources */,
 				4956F3BD27DA11CE0057DFC8 /* Preview Assets.xcassets in Resources */,
 				4956F3BA27DA11CE0057DFC8 /* Assets.xcassets in Resources */,
 			);
@@ -132,13 +187,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		768E766B751B1570FDD2DB52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-slnovaswiftui-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E66AE61E371ED3C122A5CEA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slnovaswiftui/Pods-slnovaswiftui-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slnovaswiftui/Pods-slnovaswiftui-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slnovaswiftui/Pods-slnovaswiftui-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4956F3AE27DA11CA0057DFC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4956F3B827DA11CA0057DFC8 /* ContentView.swift in Sources */,
+				49B99DBF27DF61D500C94B21 /* Helper.swift in Sources */,
+				4956F3D327DA24CF0057DFC8 /* HostState.swift in Sources */,
+				4956F3D527DADE220057DFC8 /* ModelData.swift in Sources */,
 				4956F3B627DA11CA0057DFC8 /* slnovaswiftuiApp.swift in Sources */,
+				4956F3D927DAE87E0057DFC8 /* DataChangePublisher.swift in Sources */,
+				4956F3CF27DA20420057DFC8 /* HostStateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +304,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -256,6 +359,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -263,9 +367,11 @@
 		};
 		4956F3C127DA11CE0057DFC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB74CF64D272D85E81E0A726 /* Pods-slnovaswiftui.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = slnovaswiftui/slnovaswiftui.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"slnovaswiftui/Preview Content\"";
@@ -284,6 +390,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcwang.slnovaswiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -292,9 +399,11 @@
 		};
 		4956F3C227DA11CE0057DFC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB13BBF55A24F40F8230FE05 /* Pods-slnovaswiftui.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = slnovaswiftui/slnovaswiftui.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"slnovaswiftui/Preview Content\"";
@@ -313,6 +422,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcwang.slnovaswiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,6 +451,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49040FC427DF966F00007CCB /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49040FC527DF966F00007CCB /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49040FC427DF966F00007CCB /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4956F3AA27DA11CA0057DFC8 /* Project object */;
 }
