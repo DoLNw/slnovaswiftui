@@ -111,11 +111,15 @@ struct HostStateView: View {
                                 .padding(.bottom, 3)
                         }
                     }
-                    PieChart()
-                        .data([("安全", Double(hostState.infoVul+1)), ("低", Double(hostState.lowVul+1)), ("中", Double(hostState.mediumVul+2)), ("高", Double(hostState.highVul+3))])
-                        .chartStyle(ChartStyle(backgroundColor: .white,
-                                                       foregroundColor: ColorGradient(.blue, .purple)))
-                        
+                    
+                    CardView(showShadow: false) {
+                        ChartLabel("风险等级", type: .custom(size: 12, padding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0), color: Color(.label)))
+                        PieChart()
+                    }
+                    .data([("安全", Double(hostState.infoVul+1)), ("低", Double(hostState.lowVul+1)), ("中", Double(hostState.mediumVul+2)), ("高", Double(hostState.highVul+3))])
+                    .chartStyle(ChartStyle(backgroundColor: .white,
+                                           foregroundColor: ColorGradient(.teal, .yellow)))
+                    
                 }
                 
                 Text("uuid: \(hostState.uuid)").font(.caption).foregroundColor(Color(.label))
