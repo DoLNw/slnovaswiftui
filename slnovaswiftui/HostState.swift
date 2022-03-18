@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct HostState: Hashable, Codable, Identifiable {
+struct HostState: Hashable, Identifiable {
     // ForEach中需要遵循Identifiable，这样就不用提供ID了，然后我让这个id等于我的uuid
     var id: String {uuid}
     
@@ -45,64 +46,88 @@ struct HostState: Hashable, Codable, Identifiable {
     var isAggregating = false
     var isTraining = false
     
-//    init(uuid: String,
-//         diskAllocationRatio: Double,
-//         name: String,
-//         ip: String,
-//         totalDiskGB: Double,
-//         totalMemoryGB: Double,
-//         gpuTotalMemoryGB: Double,
-//         cpu_max_freq: Double,
-//         time: String,
-//         cpuPercent: Double,
-//         usedDiskGB: Double,
-//         usedMemoryGB: Double,
-//         gpuUsedMemoryGB: Double,
-//         cpuCurrentFreq: Double,
-//         highVul: Int=0,
-//         mediumVul: Int=0,
-//         lowVul: Int=0,
-//         infoVul: Int=0,
-//         modelSizeMB: Double,
-//         loss: Double,
-//         accuracy: Double,
-//         epoch: Int=0,
-//         isAggregating: Bool=false,
-//         isTraining: Bool=false) {
-//
-//        // 不变
-//        self.uuid = uuid
-//        self.diskAllocationRatio = diskAllocationRatio
-//        self.name = name
-//        self.ip = ip
-//
-//        self.totalDiskGB = totalDiskGB
-//        self.totalMemoryGB = totalMemoryGB
-//        self.gpuTotalMemoryGB = gpuTotalMemoryGB
-//        self.cpu_max_freq = cpu_max_freq
-//
-//
-//        // 变
-//        self.time = time
-//        self.cpuPercent = cpuPercent
-//
-//        self.usedDiskGB = usedDiskGB
-//        self.usedMemoryGB = usedMemoryGB
-//        self.gpuUsedMemoryGB = gpuUsedMemoryGB
-//        self.cpuCurrentFreq = cpuCurrentFreq
-//
-//        self.highVul = highVul
-//        self.mediumVul = mediumVul
-//        self.lowVul = lowVul
-//        self.infoVul = infoVul
-//
-//        self.modelSizeMB = modelSizeMB
-//        self.loss = loss
-//        self.accuracy = accuracy
-//        self.epoch = epoch
-//        self.isAggregating = isAggregating
-//        self.isTraining = isTraining
-//    }
+    // 这个color只不过是我显示颜色的时候设置的
+    var myBackgroundColor: Color = Color(.systemBackground)
+    
+    init(uuid: String,
+         diskAllocationRatio: Double,
+         name: String,
+         ip: String,
+         totalDiskGB: Double,
+         totalMemoryGB: Double,
+         gpuTotalMemoryGB: Double,
+         cpu_max_freq: Double,
+         time: String,
+         cpuPercent: Double,
+         usedDiskGB: Double,
+         usedMemoryGB: Double,
+         gpuUsedMemoryGB: Double,
+         cpuCurrentFreq: Double,
+         highVul: Int=0,
+         mediumVul: Int=0,
+         lowVul: Int=0,
+         infoVul: Int=0,
+         modelSizeMB: Double,
+         loss: Double,
+         accuracy: Double,
+         epoch: Int=0,
+         isAggregating: Bool=false,
+         isTraining: Bool=false) {
+
+        // 不变
+        self.uuid = uuid
+        self.diskAllocationRatio = diskAllocationRatio
+        self.name = name
+        self.ip = ip
+
+        self.totalDiskGB = totalDiskGB
+        self.totalMemoryGB = totalMemoryGB
+        self.gpuTotalMemoryGB = gpuTotalMemoryGB
+        self.cpu_max_freq = cpu_max_freq
+
+
+        // 变
+        self.time = time
+        self.cpuPercent = cpuPercent
+
+        self.usedDiskGB = usedDiskGB
+        self.usedMemoryGB = usedMemoryGB
+        self.gpuUsedMemoryGB = gpuUsedMemoryGB
+        self.cpuCurrentFreq = cpuCurrentFreq
+
+        self.highVul = highVul
+        self.mediumVul = mediumVul
+        self.lowVul = lowVul
+        self.infoVul = infoVul
+
+        self.modelSizeMB = modelSizeMB
+        self.loss = loss
+        self.accuracy = accuracy
+        self.epoch = epoch
+        self.isAggregating = isAggregating
+        self.isTraining = isTraining
+        
+//        self.myBackgroundColor = Color(.systemBackground)
+////        // 检查如果是时间格式
+////        // 因为数据库存进去，读取出来，都需要时间，所以显示的时间都会比实际时间晚的。
+        if (self.time.count == 19) {
+            let localTime = Helper.getAllSeconds(time: Helper.getCurrentTime())
+            let mysqlTime = Helper.getAllSeconds(time: self.time)
+
+            // 训练用红色，聚合用橙色，运行蓝色，不活跃状态背景色
+            if (mysqlTime - 3 < localTime && localTime <= mysqlTime + 4) {
+                self.myBackgroundColor = .blue.opacity(0.6)
+                if self.isTraining {
+                    self.myBackgroundColor = .red.opacity(0.6)
+                }
+                // 聚合为true的时候，training肯定是true的
+                if self.isAggregating {
+                    self.myBackgroundColor = .orange.opacity(0.6)
+
+                }
+            }
+        }
+    }
     
     func description() -> String {
         // 为了使得文本看起来空的差不多，我需要留出一些空格

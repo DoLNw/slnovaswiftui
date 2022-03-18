@@ -110,6 +110,7 @@ func getHostStates(infos: [[String: Any]]) -> [HostState] {
             isTraining: (info["is_training"] as! Bool)
         )
         
+        
         hosts.append(hostate)
     }
     

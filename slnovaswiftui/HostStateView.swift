@@ -10,7 +10,7 @@ import SwiftUICharts
 
 struct HostStateView: View {
     var hostState: HostState
-        
+    
     var body: some View {
         ZStack {
             
@@ -23,58 +23,22 @@ struct HostStateView: View {
                 
 //                .fill(Color(.systemBackground))
             
-            // 检查如果是时间格式
-            // 因为数据库存进去，读取出来，都需要时间，所以显示的时间都会比实际时间晚的。
-            if (hostState.time.count == 19) {
-                let localTime = Helper.getAllSeconds(time: Helper.getCurrentTime())
-                let mysqlTime = Helper.getAllSeconds(time: hostState.time)
-
-                // 训练用红色，聚合用橙色，运行蓝色，不活跃状态背景色
-                if (mysqlTime - 3 < localTime && localTime <= mysqlTime + 4) {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(.blue.opacity(0.6))
-                        .shadow(color: .gray, radius: 16, x: 6, y: 6)
-                        
-
-                    if hostState.isTraining {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(.red.opacity(0.5))
-                            .shadow(color: .gray, radius: 16, x: 6, y: 6)
-                            
-                    }
-                    // 聚合为true的时候，training肯定是true的
-                    if hostState.isAggregating {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(.orange.opacity(0.5))
-                            .shadow(color: .gray, radius: 16, x: 6, y: 6)
-                            
-                    }
-                } else {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(Color(.systemBackground))
-                        .shadow(color: .gray, radius: 16, x: 6, y: 6)
-                        
-                }
-
-
-            } else {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(Color(.systemBackground))
-                    .shadow(color: .gray, radius: 16, x: 6, y: 6)
-                    
-            }
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(hostState.myBackgroundColor)
+                .shadow(color: .gray, radius: 16, x: 6, y: 6)
             
             
             VStack(alignment: .leading, spacing: 1) {
-                Text(hostState.name).font(.title2).foregroundColor(.green)
+                Text(hostState.name).font(.title2).foregroundColor(Color(.label))
                     .padding(.bottom, 5)
                     .padding(.top, 3)
                 Text(hostState.ip).font(.title3).foregroundColor(.gray)
                     .padding(.bottom, 3)
-                Text(hostState.time).font(.title3).foregroundColor(.green)
+                Text(hostState.time).font(.title3).foregroundColor(Color(.label))
                     .padding(.bottom, 3)
                 
-                Text("CPU使用率: \(String(format:"%.2f", hostState.cpuPercent))%").font(.body).foregroundColor(.green)
+                Text("CPU使用率: \(String(format:"%.2f", hostState.cpuPercent))%").foregroundColor(Color(.label))
+                    .font(.body)
                     .padding(.bottom, 5)
                 
                 ProgressView("磁盘: \(String(format:"%.2f", hostState.usedDiskGB))(\(String(format:"%.2f", hostState.totalDiskGB)))GB", value: hostState.usedDiskGB, total: hostState.totalDiskGB)
@@ -100,7 +64,7 @@ struct HostStateView: View {
 //                                                       foregroundColor: ColorGradient(.blue, .purple)))
                     ZStack {
                         RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .fill(Color(.systemBackground))
+                            .fill(hostState.myBackgroundColor)
                             .shadow(color: .gray, radius: 8, x: 3, y: 3)
                         VStack {
                             Text("第 \(hostState.epoch) 轮").foregroundColor(Color(.label))

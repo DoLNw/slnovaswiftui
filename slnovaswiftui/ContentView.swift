@@ -72,6 +72,8 @@ func sendFanoutMessage(message: String) {
 
 
 
+
+
 struct ContentView: View {
     @State var presentAlert: Bool = false
     @State var date1 = Date()
@@ -82,21 +84,12 @@ struct ContentView: View {
     let timer = TimePublisher()
     @State var gridLayout: [GridItem] = [GridItem(.adaptive(minimum: 300, maximum: 500), spacing: 50)]
     
-    
-    
-    
-    
-    
-    
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: self.gridLayout, spacing: 50) {
                     ForEach(hostStates, id: \.self) { hostState in
-                        
                         HostStateView(hostState: hostState)
-                            .foregroundColor(Color(.systemBackground))
-    //                    Text("\(date1)")
                     }
                 }
                 .padding(.leading, 40)
@@ -110,8 +103,6 @@ struct ContentView: View {
     //                    }
     //                }
                     hostStates = scheGetHostStates()
-                    
-                    print(hostStates.count)
                 }
                 
             }
